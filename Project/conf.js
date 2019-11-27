@@ -1,6 +1,33 @@
-// conf.js
+var HtmlReporter = require('protractor-beautiful-reporter');
 exports.config = {
-  framework: 'jasmine',
+framework: 'jasmine',
   seleniumAddress: 'http://localhost:4444/wd/hub',
-  specs: ['test.js']
+  capabilities: { 
+    browserName: 'firefox', 
+    },
+    specs: ['CalculatorTest.js'],
+    /* REPORT */
+    onPrepare: function() {
+      jasmine.getEnv().addReporter(new HtmlReporter({
+              docTitle: 'Reporte',
+              baseDirectory: 'Reports', 
+              screenshotsSubfolder: 'images',
+              jsonsSubfolder: 'jsons',
+              preserveDirectory: false,
+              collectBrowserLogs : false,
+              clientDefaults:{
+                showTotalDurationIn: "belowHeader",                  
+                totalDurationFormat: "h:m:s",
+                columnSettings:{
+                    displayTime:true,
+                    displayBrowser:false,
+                    displaySessionId:false,
+                    displayOS:false,
+                    inlineScreenshots:false,
+                    warningTime: 5000,
+                    dangerTime: 10000
+                }
+             }     
+           }).getJasmine2Reporter());
+        }
 }
