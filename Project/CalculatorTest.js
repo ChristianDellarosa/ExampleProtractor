@@ -1,4 +1,3 @@
-
 describe('Calculator Test', function() {
   var URL = "http://juliemr.github.io/protractor-demo/";
   browser.get(URL);
@@ -6,7 +5,6 @@ describe('Calculator Test', function() {
   var secondNumber = element(by.model('second'));
   var acceptButton = element(by.id('gobutton'));
   var listOperators = element.all(by.model('operator'));
-
 
   function input(number1, number2, operator) {
     firstNumber.sendKeys(number1);
