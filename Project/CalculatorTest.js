@@ -1,6 +1,9 @@
 describe('Calculator Test', function() {
-  var URL = "http://juliemr.github.io/protractor-demo/";
-  browser.get(URL);
+  beforeAll(function() {
+    var URL = "http://juliemr.github.io/protractor-demo/";
+    browser.get(URL);
+  });
+  
   var firstNumber = element(by.model('first'));
   var secondNumber = element(by.model('second'));
   var acceptButton = element(by.id('gobutton'));

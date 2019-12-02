@@ -3,9 +3,9 @@ exports.config = {
 framework: 'jasmine',
   seleniumAddress: 'http://localhost:4444/wd/hub',
   capabilities: { 
-    browserName: 'firefox', 
+    browserName: 'chrome', 
     },
-    specs: ['CalculatorTest.js'],
+    specs: ['CalculatorTest.js', 'ZagatTest.js'],
     /* REPORT */
     onPrepare: function() {
       jasmine.getEnv().addReporter(new HtmlReporter({
